@@ -14,7 +14,6 @@ class Producto(models.Model):
     fecha_fabricacion = models.DateTimeField()
     marca = models.ForeignKey(Marca, on_delete=models.PROTECT)
     imagen = models.ImageField(upload_to="productos",null=True)
-    stock = models.IntegerField(null=True)
 
     def __str__(self):
         return self.nombre
@@ -27,4 +26,8 @@ class Boleta(models.Model):
 class Despacho(models.Model):
     numero_de_orden = models.IntegerField()
     direccion = models.CharField( max_length=150)
-    autorizacion_despacho = models.CharField(null = True,max_length=50)            
+    autorizacion_despacho = models.CharField(null = True,max_length=50)       
+
+class Stock(models.Model):
+    stock = models.IntegerField()
+    producto = models.ForeignKey(Producto, on_delete=models.PROTECT)     
