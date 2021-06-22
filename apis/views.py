@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from .models import Producto, Marca, Boleta, Despacho
+from .models import Producto, Marca, Boleta, Despacho, Stock
 from rest_framework import viewsets
-from .serializers import ProductoSerializer, MarcaSerializer, BoletaSerializer, DespachoSerializer
+from .serializers import ProductoSerializer, MarcaSerializer, BoletaSerializer, DespachoSerializer, StockSerializer
 # Create your views here.
 
 class BoletaViewset(viewsets.ModelViewSet):
@@ -11,6 +11,10 @@ class BoletaViewset(viewsets.ModelViewSet):
 class DespachoViewset(viewsets.ModelViewSet):
     queryset = Despacho.objects.all()
     serializer_class = DespachoSerializer
+
+class StockViewset(viewsets.ModelViewSet):
+    queryset = Stock.objects.all()
+    serializer_class = StockSerializer    
     
 
 

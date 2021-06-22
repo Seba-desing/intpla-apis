@@ -30,4 +30,4 @@ class Despacho(models.Model):
 
 class Stock(models.Model):
     stock = models.IntegerField()
-    producto = models.ForeignKey(Producto, on_delete=models.PROTECT)     
+    producto = models.ForeignKey(Producto, on_delete=models.PROTECT, default=True)     

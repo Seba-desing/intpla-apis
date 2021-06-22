@@ -7,6 +7,7 @@ router.register('producto', ProductoViewset)
 router.register('boleta', BoletaViewset)
 router.register('despacho', DespachoViewset)
 router.register('marca', MarcaViewset)
+router.register('stock', StockViewset)
 
 urlpatterns = [    
     path('api/', include(router.urls)),

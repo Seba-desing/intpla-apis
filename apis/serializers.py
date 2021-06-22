@@ -1,4 +1,4 @@
-from .models import Producto, Marca, Boleta, Despacho
+from .models import Producto, Marca, Boleta, Despacho, Stock
 from rest_framework import serializers
 
 
@@ -27,4 +27,10 @@ class BoletaSerializer(serializers.ModelSerializer):
 class DespachoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Despacho
-        fields = '__all__'                
+        fields = '__all__'    
+
+class StockSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Stock
+        fields = '__all__'
+            
